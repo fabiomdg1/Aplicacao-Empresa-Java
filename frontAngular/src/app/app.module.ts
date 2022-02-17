@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListaTurmaComponent } from './componentes/lista-turma/lista-turma.component';
-import { CadastroTurmaComponent } from './componentes/cadastro-turma/cadastro-turma.component';
-import { EdicaoTurmaComponent } from './componentes/edicao-turma/edicao-turma.component';
-import { ExclusaoTurmaComponent } from './componentes/exclusao-turma/exclusao-turma.component';
+import { ListaCargoComponent } from './componentes/lista-cargo/lista-cargo.component';
+import { CadastroCargoComponent } from './componentes/cadastro-cargo/cadastro-cargo.component';
+import { EdicaoCargoComponent } from './componentes/edicao-cargo/edicao-cargo.component';
+import { ExclusaoCargoComponent } from './componentes/exclusao-cargo/exclusao-cargo.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { HeaderComponent } from './componentes/header/header.component';
@@ -14,10 +14,10 @@ import { HeaderComponent } from './componentes/header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ListaTurmaComponent,
-    CadastroTurmaComponent,
-    EdicaoTurmaComponent,
-    ExclusaoTurmaComponent,
+    ListaCargoComponent,
+    CadastroCargoComponent,
+    EdicaoCargoComponent,
+    ExclusaoCargoComponent,
     FooterComponent,
     HomeComponent,
     HeaderComponent
