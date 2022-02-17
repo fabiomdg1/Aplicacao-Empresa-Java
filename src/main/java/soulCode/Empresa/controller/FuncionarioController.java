@@ -100,8 +100,6 @@ public class FuncionarioController {
 		funcionario = funcionarioService.editarFuncionario(funcionario);
 		return ResponseEntity.noContent().build();
 	}
-	
-
 }
 		
 
