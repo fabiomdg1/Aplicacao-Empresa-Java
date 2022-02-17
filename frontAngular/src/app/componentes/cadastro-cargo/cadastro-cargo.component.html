@@ -1,1 +1,23 @@
-<p>cadastro-cargo works!</p>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Cadastro de novo Cargo</h5>
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Atribuição do Cargo</label>
+
+        <!-- Para utilizar o ngModel, é preciso importar o mesmo no app.module -->
+        <input type="text" class="form-control" [(ngModel)]="cargo.car_atribuicao" name="car_atribuicao">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Nome da Cargo</label>
+
+        <!-- Para utilizar o ngModel, é preciso importar o mesmo no app.module -->
+        <input type="text" class="form-control" [(ngModel)]="cargo.car_nome" name="car_nome">
+      </div>
+      <button (click)="cadastrarCargo()" class="btn btn-primary ">Cadastrar</button>
+      <button type="reset" class="btn btn-secondary mx-3">Limpar</button>
+      <button routerLink="/cargo" class="btn btn-secondary mx-3">Voltar</button>
+    </form>
+
+  </div>
+</div>

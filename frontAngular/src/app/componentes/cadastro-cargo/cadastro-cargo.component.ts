@@ -1,4 +1,7 @@
+import { CargoService } from './../../servicos/cargo.service';
+import { Cargo } from './../../cargoModel';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro-cargo',
@@ -7,9 +10,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroCargoComponent implements OnInit {
 
-  constructor() { }
+  //----- Criando objeto turma para servir de parâmetro na função cadastrarCargo -----//
+  cargo:Cargo = {
+    car_nome: '',
+    car_atribuicao: ''
+  }
+
+  //--------------------------- Injeção de dependências --------------------------//
+  //------------No Angular a injeção de dependências é feito no construtor -------//
+  //---------- cargoService vai disponibilizar seus métodos ----------------------//
+  //---------- router vai disponibilizar seus métodos ----------------------------//
+  constructor(private cargoService: CargoService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  //------------------------------ Cadastrar Cargo -------------------------------//
+  cadastrarCargo(){
+    this.cargoService.cadastrarCargo(this.cargo).subscribe((resultado)=>{
+      alert("Cargo cadastrado com sucesso")
+      this.router.navigate(['/cargo'])
+    })
+
+    //----- O Refresh da página ocorre mais rápido que o cadastro do registro no bd -----//
+    //----- O setTimeout faz o refresh aguardar para poder mostrar o novo registro ------//
+    setTimeout(() => {
+      this.router.navigate(['/cargo']);
+    }, 500)
+  }
 }

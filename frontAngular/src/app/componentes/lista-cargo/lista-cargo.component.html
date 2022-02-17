@@ -1,1 +1,30 @@
-<p>lista-cargo-works!</p>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Cargos</h5>
+    <button routerLink="/cadastroCargo" class="btn btn-danger">Cadastrar</button>
+
+    <!---------------------------- Barra de Rolagem ----------------------------->
+    <div style="height: 300px; overflow: auto;">    <table class="table">
+
+      <thead>
+        <tr>
+          <th scope="col">Código</th>
+          <th scope="col">Nome do Cargo</th>
+          <th scope="col">Atribuição</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let cargo of cargos">
+          <th scope="row">{{cargo.id_cargo}}</th>
+          <td>{{cargo.car_nome}}</td>
+          <td>{{cargo.car_atribuicao}}</td>
+          <td><i class="fa-solid fa-user"  ></i></td>
+          <td><i routerLink="/edicaoTurma/{{cargo.id_cargo}}" class="fas fa-edit text-info" ></i>
+          <i routerLink="/exclusaoTurma/{{cargo.id_cargo}}" class="fas fa-trash-alt text-danger mx-2" ></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
