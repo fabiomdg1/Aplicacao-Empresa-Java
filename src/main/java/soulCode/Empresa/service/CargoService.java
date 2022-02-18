@@ -42,7 +42,20 @@ public class CargoService {
 	}
 	
 	//-------------------------------------------- Deletar um Cargo ----------------------------------------------//
-	public void deletarUmCargo(Integer id_cargo) {
-		//Aqui serão implementadas as classes de exceptions
+	public void deletarUmCargo(Integer id_cargo) {		
+		buscarUmCargo(id_cargo);
+		
+		try {
+			cargoRepository.deleteById(id_cargo);
+			
+		//----- Pega o tipo de erro DataIntegrityViolationException e instanciamos no e -----//
+		}catch(org.springframework.dao.DataIntegrityViolationException e) {
+
+			//----- No lançamento da exceção,usamos a que criamos -----//
+			
+			//throw new soulCode.faculdade.services.exceptions
+			//.DataIntegrityViolationException("A turma não pode ser deletada, porque possui alunos relacionados");
+		}
+		
 	}
 }

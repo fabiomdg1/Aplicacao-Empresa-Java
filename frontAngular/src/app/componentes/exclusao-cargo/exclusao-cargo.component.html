@@ -1,1 +1,18 @@
-<p>exclusao-turma works!</p>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Exclusão de Cargo</h5>
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Descrição do Cargo</label>
+        <input type="text" class="form-control" [(ngModel)]="cargo.car_atribuicao" readonly name="car_atribuicao">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Nome do Cargo</label>
+        <input type="text" class="form-control" [(ngModel)]="cargo.car_nome" readonly name="car_nome">
+      </div>
+      <button (click)="excluirCargo()" class="btn btn-primary ">Excluir</button>
+      <button routerLink="/cargo" class="btn btn-secondary mx-3">Cancelar</button>
+    </form>
+  </div>
+</div>
+

@@ -43,6 +43,7 @@ export class CargoService {
   //----------------------------DELETE------------------------------//
   //-------------------------cadastrarCargo-------------------------//
   excluirCargo(id:String):Observable<void>{
+    console.log("Excluindo " + id)
     const url = `${this.baseUrl}/cargo/${id}`
     return this.http.delete<void>(url)
   }
