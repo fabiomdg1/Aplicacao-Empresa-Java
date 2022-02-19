@@ -26,14 +26,16 @@ export class FuncionarioService {
     return this.http.get<Funcionario[]>(url)
   }
 
-  buscarUmFuncionario(){
-
+  buscarUmFuncionario(id_funcionario:string):Observable<Funcionario>{
+    const url = `${this.baseUrl}/funcionario/${id_funcionario}`
+    return this.http.get<Funcionario>(url)
   }
 
 
   //-------------------------------------------- POST --------------------------------------------//
-  cadastrarFuncionario(){
-
+  cadastrarFuncionario(funcionario:Funcionario, id_cargo:string):Observable<Funcionario>{
+    const url = `${this.baseUrl}/funcionario?cargo=${id_cargo}`
+    return this.http.post<Funcionario>(url,funcionario)
   }
 
 
@@ -44,8 +46,9 @@ export class FuncionarioService {
 
 
   //------------------------------------------- DELETE --------------------------------------------//
-  excluirFuncionario(){
-
+  excluirFuncionario(id_funcionario:string):Observable<Funcionario>{
+    const url = `${this.baseUrl}/funcionario/${id_funcionario}`
+    return this.http.delete<Funcionario>(url)
   }
 
 

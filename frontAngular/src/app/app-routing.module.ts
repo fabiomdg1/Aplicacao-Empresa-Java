@@ -1,3 +1,5 @@
+import { ExclusaoFuncionarioComponent } from './componentes/exclusao-funcionario/exclusao-funcionario.component';
+import { ListaFuncionarioComponent } from './componentes/lista-funcionario/lista-funcionario.component';
 import { EdicaoCargoComponent } from './componentes/edicao-cargo/edicao-cargo.component';
 import { ExclusaoCargoComponent } from './componentes/exclusao-cargo/exclusao-cargo.component';
 import { CadastroCargoComponent } from './componentes/cadastro-cargo/cadastro-cargo.component';
@@ -12,7 +14,10 @@ const routes: Routes = [
   {path: "cargo", component:ListaCargoComponent},
   {path: "cadastroCargo", component:CadastroCargoComponent},
   {path: "exclusaoCargo/:id", component: ExclusaoCargoComponent},
-  {path: "edicaoCargo/:id", component: EdicaoCargoComponent}
+  {path: "edicaoCargo/:id", component: EdicaoCargoComponent},
+  {path: "funcionarioCargo/:id_cargo",component: ListaFuncionarioComponent},
+  {path: "funcionarioCadastro/:id_cargo", component:CadastroCargoComponent},
+  {path: "funcionarioExclusao/:id_funcionario", component:ExclusaoFuncionarioComponent}
 ];
 
 @NgModule({

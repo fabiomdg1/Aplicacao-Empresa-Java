@@ -19,7 +19,7 @@
           <th scope="row">{{cargo.id_cargo}}</th>
           <td>{{cargo.car_nome}}</td>
           <td>{{cargo.car_atribuicao}}</td>
-          <td><i class="fa-solid fa-user"  ></i></td>
+          <td><i routerLink="/funcionarioCargo/{{cargo.id_cargo}}" class="fa-solid fa-user"  ></i></td>
           <td><i routerLink="/edicaoCargo/{{cargo.id_cargo}}" class="fas fa-edit text-info" ></i>
           <i routerLink="/exclusaoCargo/{{cargo.id_cargo}}" class="fas fa-trash-alt text-danger mx-2" ></i>
           </td>
