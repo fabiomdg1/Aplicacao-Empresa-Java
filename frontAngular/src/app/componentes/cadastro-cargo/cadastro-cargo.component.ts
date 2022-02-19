@@ -27,15 +27,19 @@ export class CadastroCargoComponent implements OnInit {
 
   //------------------------------ Cadastrar Cargo -------------------------------//
   cadastrarCargo(){
-    this.cargoService.cadastrarCargo(this.cargo).subscribe((resultado)=>{
-      alert("Cargo cadastrado com sucesso")
-      this.router.navigate(['/cargo'])
+    this.cargoService.cadastrarCargo(this.cargo).subscribe({
+      complete:()=>{alert("Cadastro do cargo efetuado com sucesso")
+                    this.router.navigate(['/cargo'])},
+      error:()=>{alert("Erro ao cadastrar cargo")
+                  this.router.navigate(["/cargo"])}
+      //next:()=>{alert("Cargo Cadastrado")}
     })
+
 
     //----- O Refresh da página ocorre mais rápido que o cadastro do registro no bd -----//
     //----- O setTimeout faz o refresh aguardar para poder mostrar o novo registro ------//
-    setTimeout(() => {
-      this.router.navigate(['/cargo']);
-    }, 500)
+    //setTimeout(() => {
+    //  this.router.navigate(['/cargo']);
+    //}, 500)
   }
 }

@@ -53,8 +53,9 @@ public class CargoService {
 
 			//----- No lançamento da exceção,usamos a que criamos -----//
 			
-			//throw new soulCode.faculdade.services.exceptions
-			//.DataIntegrityViolationException("A turma não pode ser deletada, porque possui alunos relacionados");
+			//throw new soulCode.empresa.services.exceptions
+			throw new soulCode.Empresa.service.exceptions
+			.DataIntegrityViolationException("A turma não pode ser deletada, porque possui alunos relacionados");
 		}
 		
 	}

@@ -16,6 +16,7 @@ import { FooterComponent } from './componentes/footer/footer.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { HeaderComponent } from './componentes/header/header.component';
 import { CadastroCargoComponent } from './componentes/cadastro-cargo/cadastro-cargo.component';
+import { CadastroFuncionarioComponent } from './componentes/cadastro-funcionario/cadastro-funcionario.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { CadastroCargoComponent } from './componentes/cadastro-cargo/cadastro-ca
     FooterComponent,
     HomeComponent,
     HeaderComponent,
-    CadastroCargoComponent
+    CadastroCargoComponent,
+    CadastroFuncionarioComponent
   ],
   imports: [
     BrowserModule,
