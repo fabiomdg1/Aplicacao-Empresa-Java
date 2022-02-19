@@ -19,6 +19,7 @@ import soulCode.Empresa.repository.FuncionarioRepository;
 import soulCode.Empresa.service.FuncionarioService;
 
 
+
 //----------------------------------------------Problema de Cors-----------------------------------------------------------//
 //----- Para evitar o problema de CORS no Java, usamos o CrossOrigin -----//
 @CrossOrigin
@@ -67,6 +68,15 @@ public class FuncionarioController {
 	public ResponseEntity<?> buscarUmFuncionario(@PathVariable Integer Id_funcionario){
 		Funcionario funcionario = funcionarioService.buscarUmFuncionario(Id_funcionario);
 		return ResponseEntity.ok().body(funcionario);
+	}
+	
+	//----------------------------------------------------- GET --------------------------------------------------------------------------------//
+	//----- Disponibilizando o método buscarAlunoTurma através do endereço faculdade/aluno/busca-turma, aluno por meio da notação @GetMapping -----//
+	//----- A diferença para o RequestMapping é que o @GetMapping especifica os tipos de solicitações HTTP. Neste caso o GET -------------------//
+	@GetMapping("/funcionario/busca-cargo/{id_cargo}")
+	public List<Funcionario> buscarFuncionarioCargo(@PathVariable Integer id_cargo){
+		List<Funcionario> funcionario = funcionarioService.buscarFuncionarioCargo(id_cargo);
+		return funcionario;
 	}
 	
 	

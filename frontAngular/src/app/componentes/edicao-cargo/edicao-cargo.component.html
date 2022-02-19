@@ -1,1 +1,32 @@
-<p>edicao-turma works!</p>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Cadastro de novo Cargo</h5>
+    <form>
+
+      <div class="mb-3">
+        <label class="form-label">Atribuição do Cargo</label>
+        <!-- Para utilizar o ngModel, é preciso importar o mesmo no app.module -->
+        <input type="text" class="form-control" [(ngModel)]="cargo.car_atribuicao" name="car_atribuicao">
+      </div>
+
+
+      <div class="mb-3">
+        <label class="form-label">Nome do Cargo</label>
+        <!-- Para utilizar o ngModel, é preciso importar o mesmo no app.module -->
+        <input type="text" class="form-control" [(ngModel)]="cargo.car_nome" name="car_nome">
+      </div>
+
+
+      <!-- Chamando a função Cadastrar Cargo -->
+      <button (click)="editarCargo()" class="btn btn-primary ">Salvar</button>
+
+      <!-- Limpar dados digitados no formulário -->
+      <button type="reset" class="btn btn-secondary mx-3">Limpar</button>
+
+      <!-- Volta para lista de cargos já cadastrados -->
+      <button routerLink="/cargo" class="btn btn-secondary mx-3">Voltar</button>
+
+    </form>
+
+  </div>
+</div>

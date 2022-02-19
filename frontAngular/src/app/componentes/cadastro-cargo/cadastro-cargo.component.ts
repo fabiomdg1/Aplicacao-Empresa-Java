@@ -27,12 +27,19 @@ export class CadastroCargoComponent implements OnInit {
 
   //------------------------------ Cadastrar Cargo -------------------------------//
   cadastrarCargo(){
+    // this.cargoService.cadastrarCargo(this.cargo).subscribe((resultado)=>{
+    //   alert("Cargo cadastrada com sucesso")
+    //   this.router.navigate(['/turma'])
+    // })
+
     this.cargoService.cadastrarCargo(this.cargo).subscribe({
-      complete:()=>{alert("Cadastro do cargo efetuado com sucesso")
-                    this.router.navigate(['/cargo'])},
+      //next:()=>{alert("Cargo Cadastrado")},
+
       error:()=>{alert("Erro ao cadastrar cargo")
-                  this.router.navigate(["/cargo"])}
-      //next:()=>{alert("Cargo Cadastrado")}
+                  this.router.navigate(["/cargo"])},
+
+      complete:()=>{alert("Cadastro do cargo efetuado com sucesso")
+                  this.router.navigate(['/cargo'])}
     })
 
 
