@@ -19,6 +19,7 @@ import { CadastroCargoComponent } from './componentes/cadastro-cargo/cadastro-ca
 import { CadastroFuncionarioComponent } from './componentes/cadastro-funcionario/cadastro-funcionario.component';
 import { ListaFuncionarioComponent } from './componentes/lista-funcionario/lista-funcionario.component';
 import { ExclusaoFuncionarioComponent } from './componentes/exclusao-funcionario/exclusao-funcionario.component';
+import { EdicaoFuncionarioComponent } from './componentes/edicao-funcionario/edicao-funcionario.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { ExclusaoFuncionarioComponent } from './componentes/exclusao-funcionario
     CadastroCargoComponent,
     CadastroFuncionarioComponent,
     ListaFuncionarioComponent,
-    ExclusaoFuncionarioComponent
+    ExclusaoFuncionarioComponent,
+    EdicaoFuncionarioComponent
   ],
   imports: [
     BrowserModule,

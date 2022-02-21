@@ -91,7 +91,7 @@ public class FuncionarioController {
 		
 		funcionario = funcionarioService.inserirFuncionario(id_cargo, funcionario);
 		
-			URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
+			URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/cargo/{id}")
 				.buildAndExpand(funcionario.getId_funcionario()).toUri();
 		return ResponseEntity.created(uri).build();
 	}
