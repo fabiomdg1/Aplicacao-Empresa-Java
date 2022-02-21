@@ -4,6 +4,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import soulCode.Empresa.model.Cargo;
 import soulCode.Empresa.model.Funcionario;
 import soulCode.Empresa.repository.FuncionarioRepository;
 
@@ -16,6 +17,8 @@ public class FuncionarioService {
 	@Autowired
 	private FuncionarioRepository funcionarioRepository;
 	
+	@Autowired
+	private CargoService cargoService;
 	
 	//---------------------------------------------------------------------------------------------------------------//
 	//----------------------------------------- Listar Todos os Funcionários-----------------------------------------//
@@ -54,7 +57,10 @@ public class FuncionarioService {
 	//-------------------------------------------- Inserir 1 Funcionário --------------------------------------------//
 	//---------------------------------------------------------------------------------------------------------------//
 	
-	public Funcionario inserirFuncionario(Funcionario funcionario) {
+	public Funcionario inserirFuncionario(Integer id_cargo,Funcionario funcionario) {
+		funcionario.setId_funcionario(null);
+		Cargo cargo = cargoService.buscarUmCargo(id_cargo);
+		funcionario.setCargo(cargo);
 		return funcionarioRepository.save(funcionario);
 	}
 	

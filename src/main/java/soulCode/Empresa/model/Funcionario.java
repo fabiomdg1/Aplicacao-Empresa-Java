@@ -38,8 +38,8 @@ public class Funcionario {
 
 	//---------------------------------------------Coluna func_cargo----------------------------------------------------------//
 	//----- A anotação @Column é usada para realizar o mapeamento do campo da entidade com uma coluna do banco de dados. -----//
-	@Column(nullable = false, length = 60) // Campo não pode ser nulo, tamanho máximo de 60 caracteres
-	private String func_cargo;
+	//@Column(nullable = false, length = 60) // Campo não pode ser nulo, tamanho máximo de 60 caracteres
+	//private String func_cargo;
 
 	//----- Verificar JsonIgnore e ManyToOne-----//
 		@JsonIgnore
@@ -72,11 +72,19 @@ public class Funcionario {
 		this.func_cidade = func_cidade;
 	}
 
-	public String getFunc_cargo() {
-		return func_cargo;
+	//public Cargo getFunc_cargo() {
+		//return cargo;
+	//}
+	
+	public Cargo getCargo() {
+		return cargo;
 	}
 
-	public void setFunc_cargo(String func_cargo) {
-		this.func_cargo = func_cargo;
+	//public void setFunc_cargo(Cargo func_cargo) {
+		//this.cargo = func_cargo;
+	//}
+	
+	public void setCargo (Cargo cargo) {
+		this.cargo = cargo;
 	}
 }

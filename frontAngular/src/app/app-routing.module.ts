@@ -1,3 +1,4 @@
+import { CadastroFuncionarioComponent } from './componentes/cadastro-funcionario/cadastro-funcionario.component';
 import { ExclusaoFuncionarioComponent } from './componentes/exclusao-funcionario/exclusao-funcionario.component';
 import { ListaFuncionarioComponent } from './componentes/lista-funcionario/lista-funcionario.component';
 import { EdicaoCargoComponent } from './componentes/edicao-cargo/edicao-cargo.component';
@@ -16,7 +17,7 @@ const routes: Routes = [
   {path: "exclusaoCargo/:id", component: ExclusaoCargoComponent},
   {path: "edicaoCargo/:id", component: EdicaoCargoComponent},
   {path: "funcionarioCargo/:id_cargo",component: ListaFuncionarioComponent},
-  {path: "funcionarioCadastro/:id_cargo", component:CadastroCargoComponent},
+  {path: "funcionarioCadastro/:id_cargo", component:CadastroFuncionarioComponent},
   {path: "funcionarioExclusao/:id_funcionario", component:ExclusaoFuncionarioComponent}
 ];
 

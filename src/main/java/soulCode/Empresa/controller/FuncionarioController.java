@@ -12,8 +12,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import soulCode.Empresa.model.Cargo;
 import soulCode.Empresa.model.Funcionario;
 import soulCode.Empresa.repository.FuncionarioRepository;
 import soulCode.Empresa.service.FuncionarioService;
@@ -38,8 +41,8 @@ public class FuncionarioController {
 	//----- O Autowired permite que seja feito uma injeção de dependência -----//
 	//----- Neste caso é injetado as dependências da Interface JpaRepository, ou seja, disponibiliza os recurso desta Interface -----//
 	//----- A Interface JpaRepository disponibiliza 11 métodos para tratar o CRUD -----//
-	@Autowired
-	private FuncionarioRepository funcionarioRepository;
+	//@Autowired
+	//private FuncionarioRepository funcionarioRepository;
 		
 
 	//----- Neste caso, é injetado os métodos da classe FuncionarioService, o CRUD de Funcionários -----//
@@ -84,7 +87,10 @@ public class FuncionarioController {
 	//----------------------------------------- POST - Funcionário---------------------------------------------------//
 	//---------------------------------------------------------------------------------------------------------------//
 	@PostMapping("/funcionario") 
-	public ResponseEntity<Void> InserirFuncionario(@RequestBody Funcionario funcionario){
+	public ResponseEntity<Funcionario> InserirFuncionario(@RequestParam(value="cargo") Integer id_cargo, @RequestBody Funcionario funcionario){
+		
+		funcionario = funcionarioService.inserirFuncionario(id_cargo, funcionario);
+		
 			URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
 				.buildAndExpand(funcionario.getId_funcionario()).toUri();
 		return ResponseEntity.created(uri).build();
@@ -104,14 +110,10 @@ public class FuncionarioController {
 	//---------------------------------------------------------------------------------------------------------------//
 	//----------------------------------------- UPDATE - Funcionário---------------------------------------------------//
 	//---------------------------------------------------------------------------------------------------------------//
-	@PutMapping
-	public ResponseEntity<Void> editarFuncionario(@PathVariable Integer Id_funcionario, @RequestBody Funcionario funcionario){
+	@PutMapping("funcionario/{id_funcionario}")
+	public ResponseEntity<Void> editarFuncionario(@RequestParam(value="cargo") Cargo cargo, @PathVariable Integer Id_funcionario, @RequestBody Funcionario funcionario){
 		funcionario.setId_funcionario(Id_funcionario);
 		funcionario = funcionarioService.editarFuncionario(funcionario);
 		return ResponseEntity.noContent().build();
 	}
 }
-		
-
-
-

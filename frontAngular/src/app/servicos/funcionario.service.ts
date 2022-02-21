@@ -22,7 +22,7 @@ export class FuncionarioService {
   buscarFuncionarioCargo(id_cargo:string):Observable<Funcionario[]>{
     //----- A url vai complementar seu endereço com o endereço existente no backend --------------//
     //----- Este endereço está definido na notação @GetMapping na pasta controller ---------------//
-    const url = `${this.baseUrl}/funcionario/buscarFuncionarioCargo/${id_cargo}`
+    const url = `${this.baseUrl}/funcionario/busca-cargo/${id_cargo}`
     return this.http.get<Funcionario[]>(url)
   }
 
