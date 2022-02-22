@@ -17,6 +17,12 @@ export class FuncionarioService {
 
 
   //----------------------------------- Declaração de Métodos ------------------------------------//
+  //-------------------------------------------- GET ---------------------------------------------//
+  buscarTodosFuncionarios():Observable<Funcionario[]>{
+    const url = `${this.baseUrl}/funcionario`
+    return this.http.get<Funcionario[]>(url)
+  }
+
 
   //-------------------------------------------- GET ---------------------------------------------//
   buscarFuncionarioCargo(id_cargo:string):Observable<Funcionario[]>{

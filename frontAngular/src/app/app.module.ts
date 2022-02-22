@@ -20,6 +20,7 @@ import { CadastroFuncionarioComponent } from './componentes/cadastro-funcionario
 import { ListaFuncionarioComponent } from './componentes/lista-funcionario/lista-funcionario.component';
 import { ExclusaoFuncionarioComponent } from './componentes/exclusao-funcionario/exclusao-funcionario.component';
 import { EdicaoFuncionarioComponent } from './componentes/edicao-funcionario/edicao-funcionario.component';
+import { ListaGeralFuncionarioComponent } from './componentes/lista-geral-funcionario/lista-geral-funcionario.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { EdicaoFuncionarioComponent } from './componentes/edicao-funcionario/edi
     CadastroFuncionarioComponent,
     ListaFuncionarioComponent,
     ExclusaoFuncionarioComponent,
-    EdicaoFuncionarioComponent
+    EdicaoFuncionarioComponent,
+    ListaGeralFuncionarioComponent
   ],
   imports: [
     BrowserModule,

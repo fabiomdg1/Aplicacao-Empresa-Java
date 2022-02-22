@@ -1,3 +1,4 @@
+import { ListaGeralFuncionarioComponent } from './componentes/lista-geral-funcionario/lista-geral-funcionario.component';
 import { CadastroFuncionarioComponent } from './componentes/cadastro-funcionario/cadastro-funcionario.component';
 import { ExclusaoFuncionarioComponent } from './componentes/exclusao-funcionario/exclusao-funcionario.component';
 import { ListaFuncionarioComponent } from './componentes/lista-funcionario/lista-funcionario.component';
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: "edicaoCargo/:id", component: EdicaoCargoComponent},
   {path: "funcionarioCargo/:id_cargo",component: ListaFuncionarioComponent},
   {path: "funcionarioCadastro/:id_cargo", component:CadastroFuncionarioComponent},
-  {path: "funcionarioExclusao/:id_funcionario", component:ExclusaoFuncionarioComponent}
+  {path: "funcionarioExclusao/:id_funcionario", component:ExclusaoFuncionarioComponent},
+  {path: "listaGeralFuncionarios", component:ListaGeralFuncionarioComponent}
 ];
 
 @NgModule({
