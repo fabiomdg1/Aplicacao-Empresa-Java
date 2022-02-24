@@ -16,6 +16,7 @@ const routes: Routes = [
   {path: "cargo", component:ListaCargoComponent},
   {path: "cadastroCargo", component:CadastroCargoComponent},
   {path: "exclusaoCargo/:id", component: ExclusaoCargoComponent},
+  {path: "exclusaoFuncionario/:id_funcionario", component: ExclusaoFuncionarioComponent},
   {path: "edicaoCargo/:id", component: EdicaoCargoComponent},
   {path: "funcionarioCargo/:id_cargo",component: ListaFuncionarioComponent},
   {path: "funcionarioCadastro/:id_cargo", component:CadastroFuncionarioComponent},

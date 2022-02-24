@@ -44,15 +44,20 @@ export class ExclusaoCargoComponent implements OnInit {
   //------------------------------- Excluir um Cargo ------------------------------//
   excluirCargo(){
     this.cargoService.excluirCargo(this.cargo.id_cargo).subscribe({
-      complete: ()=> alert("Cargo excluído com sucesso"),
-      error: ()=> alert("Este cargo possui funcionários associados, não pode ser excluído")
+      next:() => {console.log("Cargo excluído com sucesso")},
+
+      error: ()=> alert("Este cargo possui funcionários associados, não pode ser excluído"),
+
+      complete: ()=> {alert("Cargo excluído com sucesso")
+                      this.router.navigate(['/cargo']);
+      }
     })
 
     //----- O Refresh da página ocorre mais rápido que a exclusão do registro no bd -----//
     //----- O setTimeout faz o refresh aguardar para poder mostrar a exclusão -----------//
-    setTimeout(() => {
-      this.router.navigate(['/cargo']);
-    }, 500)
+    //setTimeout(() => {
+      //this.router.navigate(['/cargo']);
+    //}, 500)
   }
 
 }

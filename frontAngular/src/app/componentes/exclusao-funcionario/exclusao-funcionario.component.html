@@ -1,1 +1,23 @@
-<p>exclusao-funcionario works!</p>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Excluir Funcionário</h5>
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Nome do Funcionário</label>
+        <input type="text"  class="form-control" [(ngModel)]="funcionario.func_nome" readonly name="func_nome">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Cargo do Funcionário</label>
+        <input type="text" class="form-control" [(ngModel)]="funcionario.func_cargo"  readonly name="func_cargo">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Cidade do Funcionário</label>
+        <input type="text" class="form-control" [(ngModel)]="funcionario.func_cargo" readonly name="func_cidade">
+      </div>
+      <button (click)="deleteFuncionario()" class="btn btn-primary ">Excluir</button>
+      <button type="reset" class="btn btn-secondary mx-3">Cancelar</button>
+      <button class="btn btn-secondary mx-3">Voltar</button>
+    </form>
+
+  </div>
+</div>

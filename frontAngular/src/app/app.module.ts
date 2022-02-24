@@ -39,6 +39,7 @@ import { ListaGeralFuncionarioComponent } from './componentes/lista-geral-funcio
     EdicaoFuncionarioComponent,
     ListaGeralFuncionarioComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,

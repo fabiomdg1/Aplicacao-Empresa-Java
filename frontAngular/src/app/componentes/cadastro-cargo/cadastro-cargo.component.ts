@@ -16,6 +16,7 @@ export class CadastroCargoComponent implements OnInit {
     car_atribuicao: ''
   }
 
+
   //--------------------------- Injeção de dependências --------------------------//
   //------------No Angular a injeção de dependências é feito no construtor -------//
   //---------- cargoService vai disponibilizar seus métodos ----------------------//
@@ -27,13 +28,9 @@ export class CadastroCargoComponent implements OnInit {
 
   //------------------------------ Cadastrar Cargo -------------------------------//
   cadastrarCargo(){
-    // this.cargoService.cadastrarCargo(this.cargo).subscribe((resultado)=>{
-    //   alert("Cargo cadastrada com sucesso")
-    //   this.router.navigate(['/turma'])
-    // })
 
     this.cargoService.cadastrarCargo(this.cargo).subscribe({
-      //next:()=>{alert("Cargo Cadastrado")},
+      next:()=>{console.log("Cargo Cadastrado")},
 
       error:()=>{alert("Erro ao cadastrar cargo")
                   this.router.navigate(["/cargo"])},

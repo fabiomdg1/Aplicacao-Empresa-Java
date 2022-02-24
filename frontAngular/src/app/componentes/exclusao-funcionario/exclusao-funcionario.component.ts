@@ -10,6 +10,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ExclusaoFuncionarioComponent implements OnInit {
 
+  id_cargo: String=''
+
   funcionario:Funcionario = {
     id_funcionario:'',
     func_cargo:'',
@@ -23,6 +25,7 @@ export class ExclusaoFuncionarioComponent implements OnInit {
               private router:Router) { }
 
   ngOnInit(): void {
+    this.id_cargo = this.route.snapshot.paramMap.get("id_turma")!
     this.funcionario.id_funcionario = this.route.snapshot.paramMap.get("id_funcionario")
     this.buscarUmFuncionario()
   }
@@ -33,10 +36,14 @@ export class ExclusaoFuncionarioComponent implements OnInit {
     })
   }
 
-  deleteAluno(){
+  deleteFuncionario(){
     this.funcionarioService.excluirFuncionario(this.funcionario.id_funcionario).subscribe({
-      next: () => {alert("Funcionário deletado com sucesso")},
-      error: () => {alert("Não foi possível deletar este Funcionário")},
+      next: () => {console.log("Funcionário deletado com sucesso")},
+
+      error: () => {alert("Não foi possível deletar este Funcionário")
+                    this.router.navigate(["/cargo"])
+      },
+
       complete: () => {this.router.navigate(["/cargo"])}
 
       }
