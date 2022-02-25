@@ -1,3 +1,5 @@
+import { CargoService } from 'src/app/servicos/cargo.service';
+import { Cargo } from './../../cargoModel';
 import { FuncionarioService } from './../../servicos/funcionario.service';
 import { Component, OnInit } from '@angular/core';
 import { Funcionario } from 'src/app/funcionarioModel';
@@ -12,7 +14,8 @@ export class ListaGeralFuncionarioComponent implements OnInit {
 
   funcionarios:Funcionario[]=[]
 
-  constructor(private funcionarioService: FuncionarioService, private router:Router) { }
+  constructor(private funcionarioService: FuncionarioService,
+              private router:Router) { }
 
   ngOnInit(): void {
     this.mostrarTodosFuncionarios()
@@ -22,7 +25,6 @@ export class ListaGeralFuncionarioComponent implements OnInit {
     this.funcionarioService.buscarTodosFuncionarios().subscribe(resultado=>{
       this.funcionarios = resultado
     })
-
   }
 
 }

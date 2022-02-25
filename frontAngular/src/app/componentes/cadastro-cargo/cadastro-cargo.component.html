@@ -1,32 +1,43 @@
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Cadastro de novo Cargo</h5>
-    <form>
+<div class="card container">
 
-      <div class="mb-3">
-        <label class="form-label">Atribuição do Cargo</label>
-        <!-- Para utilizar o ngModel, é preciso importar o mesmo no app.module -->
-        <input type="text" class="form-control" [(ngModel)]="cargo.car_atribuicao" name="car_atribuicao">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 borda">
+        1 de 3
       </div>
+      <div class="col-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Cadastro de novo Cargo</h5>
+              <form>
+
+                <div class="mb-3">
+                  <label class="form-label">Atribuição do Cargo</label>
+                  <!-- Para utilizar o ngModel, é preciso importar o mesmo no app.module -->
+                  <input type="text" class="form-control" [(ngModel)]="cargo.car_atribuicao" name="car_atribuicao">
+                </div>
 
 
-      <div class="mb-3">
-        <label class="form-label">Nome da Cargo</label>
-        <!-- Para utilizar o ngModel, é preciso importar o mesmo no app.module -->
-        <input type="text" class="form-control" [(ngModel)]="cargo.car_nome" name="car_nome">
+                <div class="mb-3">
+                  <label class="form-label">Nome da Cargo</label>
+                  <!-- Para utilizar o ngModel, é preciso importar o mesmo no app.module -->
+                  <input type="text" class="form-control" [(ngModel)]="cargo.car_nome" name="car_nome">
+                </div>
+
+
+                <!-- Chamando a função Cadastrar Cargo -->
+                <button (click)="cadastrarCargo()" class="btn btn-sm btn-secondary ">Cadastrar</button>
+
+                <!-- Limpar dados digitados no formulário -->
+                <button type="reset" class="btn btn-sm btn-danger mx-3">Limpar</button>
+
+                <!-- Volta para lista de cargos já cadastrados -->
+                <button routerLink="/cargo" class="btn btn-sm btn-warning mx-3">Voltar</button>
+
+              </form>
+            </div>
+          </div>
       </div>
-
-
-      <!-- Chamando a função Cadastrar Cargo -->
-      <button (click)="cadastrarCargo()" class="btn btn-primary ">Cadastrar</button>
-
-      <!-- Limpar dados digitados no formulário -->
-      <button type="reset" class="btn btn-secondary mx-3">Limpar</button>
-
-      <!-- Volta para lista de cargos já cadastrados -->
-      <button routerLink="/cargo" class="btn btn-secondary mx-3">Voltar</button>
-
-    </form>
-
+    </div>
   </div>
 </div>

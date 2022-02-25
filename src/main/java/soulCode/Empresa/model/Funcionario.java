@@ -34,7 +34,12 @@ public class Funcionario {
 	//---------------------------------------------Coluna func_cidade---------------------------------------------------------//
 	//----- A anotação @Column é usada para realizar o mapeamento do campo da entidade com uma coluna do banco de dados. -----//
 	@Column(nullable = false, length = 60) // Campo não pode ser nulo, tamanho máximo de 60 caracteres
-	private String func_cidade;
+	private String func_cidade;	
+	
+
+	@Column(nullable = false, length = 20) // Campo não pode ser nulo, tamanho máximo de 60 caracteres
+	private String func_telefone;
+
 
 	//---------------------------------------------Coluna func_cargo----------------------------------------------------------//
 	//----- A anotação @Column é usada para realizar o mapeamento do campo da entidade com uma coluna do banco de dados. -----//
@@ -48,6 +53,15 @@ public class Funcionario {
 		private Cargo cargo;
 	
 	//----- Getters and Setters -----// 
+		
+	public String getFunc_telefone() {
+		return func_telefone;
+	}
+
+	public void setFunc_telefone(String func_telefone) {
+		this.func_telefone = func_telefone;
+	}
+	
 	public Integer getId_funcionario() {
 		return Id_funcionario;
 	}

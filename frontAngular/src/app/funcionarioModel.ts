@@ -3,4 +3,5 @@ export interface Funcionario{
   func_cargo:string
   func_cidade:string
   func_nome:string
+  func_telefone:string
  }

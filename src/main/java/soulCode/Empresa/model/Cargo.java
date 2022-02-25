@@ -6,7 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 
 //---------------------- A anotação @Entity é utilizada para informar que uma classe também é uma entidade. ------------//
@@ -38,9 +40,23 @@ public class Cargo {
 		@OneToMany(mappedBy = "cargo")
 		private List<Funcionario> funcionario = new ArrayList<>();
 
+		@OneToOne
+		@JoinColumn(name = "id_supervisor", unique = true)	
+		private Supervisor supervisor;
+		
+		
+		
 		
 		//----- Getters and Setters -----//
 		
+		public Supervisor getSupervisor() {
+			return supervisor;
+		}
+
+		public void setSupervisor(Supervisor supervisor) {
+			this.supervisor = supervisor;
+		}
+
 		public Integer getId_cargo() {
 			return id_cargo;
 		}
