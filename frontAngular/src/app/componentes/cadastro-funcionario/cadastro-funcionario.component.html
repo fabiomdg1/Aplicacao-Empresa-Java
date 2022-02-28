@@ -2,26 +2,59 @@
   <div class="card-body">
     <h5 class="card-title">Cadastro de novo Funcionário</h5>
     <form>
+      <!-- Nome do funcionário -->
       <div class="mb-3">
         <label class="form-label">Nome do funcionário</label>
         <input type="text" [(ngModel)]="funcionario.func_nome"  class="form-control" name="func_nome">
       </div>
+
+      <!-- Cidade -->
       <div class="mb-3">
         <label class="form-label">Cidade</label>
         <input type="text" [(ngModel)]="funcionario.func_cidade" class="form-control" name="func_cidade">
       </div>
+
+      <!-- Bairro -->
+      <div class="mb-3">
+        <label class="form-label">Bairro</label>
+        <input type="text" [(ngModel)]="funcionario.func_bairro" class="form-control" name="func_bairro">
+      </div>
+
+      <!-- Cargo -->
       <div class="mb-3">
         <label class="form-label">Cargo</label>
         <input type="text"  value="{{nome_cargo}}" readonly class="form-control" name="func_cargo">
       </div>
+
+      <!-- Telefone -->
       <div class="mb-3">
         <label class="form-label">Telefone</label>
         <input type="text"  [(ngModel)]="funcionario.func_telefone" class="form-control" name="func_telefone">
       </div>
+
+      <!-- Email -->
+      <div class="mb-3">
+        <label class="form-label">E-mail</label>
+        <input type="text" [(ngModel)]="funcionario.func_email" class="form-control" name="func_email">
+      </div>
+
+      <!-- Salário -->
+      <div class="mb-3">
+        <label class="form-label">Salároi</label>
+        <input type="text" [(ngModel)]="funcionario.func_salario" class="form-control" name="func_salario">
+      </div>
+
+
+      <!-- Observação -->
+      <div class="mb-3 bug_rodape">
+        <label class="form-label">Observação</label>
+        <textarea  [(ngModel)]="funcionario.func_observacao" class="form-control" name="func_observacao"></textarea>
+      </div>
+
       <button (click)="cadastrarFuncionario()" class="btn btn-sm btn-secondary ">Cadastrar</button>
       <button type="reset" class="btn btn-sm btn-danger mx-3">Limpar</button>
       <button class="btn btn-sm btn-warning mx-3">Voltar</button>
     </form>
+    </div>
 
-  </div>
 </div>

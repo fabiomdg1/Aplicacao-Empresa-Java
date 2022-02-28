@@ -16,12 +16,16 @@ export class CadastroFuncionarioComponent implements OnInit {
   id_cargo:string=''
   nome_cargo:any
 
-  funcionario: Funcionario = {
+  funcionario:Funcionario = {
     id_funcionario:'',
     func_cargo:'',
     func_cidade:'',
+    func_bairro:'',
     func_nome:'',
-    func_telefone:''
+    func_email:'',
+    func_telefone:'',
+    func_salario:'',
+    func_observacao:''
   }
 
   constructor(private funcionarioService:FuncionarioService,

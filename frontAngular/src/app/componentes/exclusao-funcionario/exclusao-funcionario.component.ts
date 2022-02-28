@@ -16,8 +16,12 @@ export class ExclusaoFuncionarioComponent implements OnInit {
     id_funcionario:'',
     func_cargo:'',
     func_cidade:'',
+    func_bairro:'',
     func_nome:'',
-    func_telefone:''
+    func_email:'',
+    func_telefone:'',
+    func_salario:'',
+    func_observacao:''
   }
 
 

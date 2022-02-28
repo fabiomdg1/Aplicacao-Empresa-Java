@@ -16,7 +16,22 @@
         </tr>
       </thead>
       <tbody>
+
         <tr *ngFor="let funcionario of fc">
+          <th scope="row">{{funcionario[0]}}</th>
+          <td>{{funcionario[1]}}</td>
+          <td>{{funcionario[2]}}</td>
+          <td>{{funcionario[3]}}</td>
+          <td>
+            <i routerLink="/perfilFuncionario" class="fa-solid fa-user"  ></i>
+          </td>
+          <td>
+            <i routerLink="/edicaoFuncionario" class="fas fa-edit text-info" ></i>
+            <i routerLink="/exclusaoFuncionario" class="fas fa-trash-alt text-danger mx-2" ></i>
+          </td>
+        </tr>
+
+        <!-- <tr *ngFor="let funcionario of fc">
           <th scope="row">{{funcionario[0]}}</th>
           <td>{{funcionario[1]}}</td>
           <td>{{funcionario[2]}}</td>
@@ -25,7 +40,7 @@
             <i class="fas fa-edit text-info" ></i>
             <i class="fas fa-trash-alt text-danger mx-2" ></i>
           </td>
-        </tr>
+        </tr> -->
       </tbody>
     </table>
   </div>

@@ -1,11 +1,12 @@
 <div class="card container">
   <div class="card-body">
     <h5 class="card-title">Cargos e Funcionários - {{nome_cargo}}</h5>
-    <button routerLink="/funcionarioCadastro/{{id_cargo}}" class="btn btn-sm btn-secondary">Cadastrar Funcionário</button>
+    <button routerLink="/cadastroFuncionario/{{id_cargo}}" class="btn btn-sm btn-secondary">Cadastrar Funcionário</button>
 
     <!---------------------------- Barra de Rolagem ----------------------------->
-    <div style="height: 300px; overflow: auto;">    <table class="table">
+    <div style="height: 300px; overflow: auto;">
 
+    <table class="table">
       <thead>
         <tr>
           <th scope="col">Código</th>
@@ -16,13 +17,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let funcionario of funcionarios">
-          <th scope="row">{{funcionario.id_funcionario}}</th>
-          <td>{{funcionario.func_nome}}</td>
-          <td>{{funcionario.func_cidade}}</td>
-          <td>{{funcionario.func_cargo}}</td>
-          <td><i class="fas fa-edit text-info" ></i>
-          <i routerLink="/exclusaoFuncionario/{{funcionario.id_funcionario}}" class="fas fa-trash-alt text-danger mx-2" ></i>
+        <tr *ngFor="let funcionario of fc">
+          <th scope="row">{{funcionario[0]}}</th>
+          <td>{{funcionario[1]}}</td>
+          <td>{{funcionario[2]}}</td>
+          <td>{{funcionario[3]}}</td>
+          <td>
+            <i routerLink="/edicaoFuncionario/{{funcionario.id_funcionario}}" class="fas fa-edit text-info" ></i>
+            <i routerLink="/exclusaoFuncionario/{{funcionario.id_funcionario}}" class="fas fa-trash-alt text-danger mx-2" ></i>
           </td>
         </tr>
       </tbody>

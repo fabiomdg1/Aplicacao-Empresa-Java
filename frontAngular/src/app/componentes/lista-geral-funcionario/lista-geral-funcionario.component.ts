@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { Funcionario } from 'src/app/funcionarioModel';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-lista-geral-funcionario',
   templateUrl: './lista-geral-funcionario.component.html',
@@ -16,8 +17,7 @@ export class ListaGeralFuncionarioComponent implements OnInit {
   funcionarios:Funcionario[]=[]
   func:any
   fc: any[] = new Array
-
-
+  todosFunc:any
 
   constructor(private funcionarioService: FuncionarioService,
               private router:Router) { }
@@ -32,8 +32,10 @@ export class ListaGeralFuncionarioComponent implements OnInit {
 
         for(this.func of this.funcionarios){
           this.fc.push(this.func)
-          console.log(this.fc)
         }
+
+        console.log("Teste: " + this.fc)
+
     })
   }
 }

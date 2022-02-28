@@ -36,9 +36,22 @@ public class Funcionario {
 	@Column(nullable = false, length = 60) // Campo não pode ser nulo, tamanho máximo de 60 caracteres
 	private String func_cidade;	
 	
+	@Column(nullable = false, length = 100)
+	private String func_bairro;
+	
+
+	@Column(nullable = true, length = 100)
+	private String func_email;
+	
+	@Column(nullable = true, length = 10)
+	private Double func_salario;
+	
 
 	@Column(nullable = false, length = 20) // Campo não pode ser nulo, tamanho máximo de 60 caracteres
 	private String func_telefone;
+	
+	@Column(nullable = true, length = 1000)
+	private String func_observacao;
 
 
 	//---------------------------------------------Coluna func_cargo----------------------------------------------------------//
@@ -46,13 +59,48 @@ public class Funcionario {
 	//@Column(nullable = false, length = 60) // Campo não pode ser nulo, tamanho máximo de 60 caracteres
 	//private String func_cargo;
 
-	//----- Verificar JsonIgnore e ManyToOne-----//
+	
+
+		//----- Verificar JsonIgnore e ManyToOne-----//
 		@JsonIgnore
 		@ManyToOne
 		@JoinColumn(name = "id_cargo")
 		private Cargo cargo;
 	
-	//----- Getters and Setters -----// 
+	//----- Getters and Setters -----//
+		
+
+	public String getFunc_bairro() {
+		return func_bairro;
+	}
+
+	public void setFunc_bairro(String func_bairro) {
+		this.func_bairro = func_bairro;
+	}
+
+	public String getFunc_email() {
+		return func_email;
+	}
+
+	public void setFunc_email(String func_email) {
+		this.func_email = func_email;
+	}
+
+	public Double getFunc_salario() {
+		return func_salario;
+	}
+
+	public void setFunc_salario(Double func_salario) {
+		this.func_salario = func_salario;
+	}
+	
+	public String getFunc_observacao() {
+		return func_observacao;
+	}
+
+	public void setFunc_observacao(String func_observacao) {
+		this.func_observacao = func_observacao;
+	}	
 		
 	public String getFunc_telefone() {
 		return func_telefone;

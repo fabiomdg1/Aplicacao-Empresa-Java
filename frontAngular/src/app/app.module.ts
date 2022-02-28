@@ -21,6 +21,7 @@ import { ListaFuncionarioComponent } from './componentes/lista-funcionario/lista
 import { ExclusaoFuncionarioComponent } from './componentes/exclusao-funcionario/exclusao-funcionario.component';
 import { EdicaoFuncionarioComponent } from './componentes/edicao-funcionario/edicao-funcionario.component';
 import { ListaGeralFuncionarioComponent } from './componentes/lista-geral-funcionario/lista-geral-funcionario.component';
+import { PerfilFuncionarioComponent } from './componentes/perfil-funcionario/perfil-funcionario.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { ListaGeralFuncionarioComponent } from './componentes/lista-geral-funcio
     ListaFuncionarioComponent,
     ExclusaoFuncionarioComponent,
     EdicaoFuncionarioComponent,
-    ListaGeralFuncionarioComponent
+    ListaGeralFuncionarioComponent,
+    PerfilFuncionarioComponent
   ],
 
   imports: [

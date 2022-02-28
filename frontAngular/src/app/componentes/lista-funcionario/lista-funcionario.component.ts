@@ -15,6 +15,8 @@ export class ListaFuncionarioComponent implements OnInit {
   id_cargo:string=''
   funcionarios:Funcionario[] = []
   nome_cargo:any
+  func:any
+  fc: any[] = new Array
 
   constructor(private funcionarioService: FuncionarioService,
               private cargoService: CargoService,
@@ -25,6 +27,19 @@ export class ListaFuncionarioComponent implements OnInit {
     this.id_cargo = this.route.snapshot.paramMap.get('id_cargo')!
     this.buscarFuncionarioCargo()
     this.buscarCargo()
+    this.mostrarFuncCargos()
+  }
+
+  mostrarFuncCargos(){
+    this.funcionarioService.buscarFuncCargo().subscribe(resultado=>{
+      this.funcionarios = resultado
+      console.log("Teste: " + this.funcionarios)
+
+        for(this.func of this.funcionarios){
+          this.fc.push(this.func)
+          console.log(this.fc)
+        }
+    })
   }
 
   buscarFuncionarioCargo(){

@@ -1,3 +1,5 @@
+import { PerfilFuncionarioComponent } from './componentes/perfil-funcionario/perfil-funcionario.component';
+import { EdicaoFuncionarioComponent } from './componentes/edicao-funcionario/edicao-funcionario.component';
 import { ListaGeralFuncionarioComponent } from './componentes/lista-geral-funcionario/lista-geral-funcionario.component';
 import { CadastroFuncionarioComponent } from './componentes/cadastro-funcionario/cadastro-funcionario.component';
 import { ExclusaoFuncionarioComponent } from './componentes/exclusao-funcionario/exclusao-funcionario.component';
@@ -12,16 +14,29 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {path: "", redirectTo: "/home", pathMatch: 'full' },
+  //--------------------------- Home ---------------------------------//
   {path: "home", component:HomeComponent},
+
+  //-------------------------- Cargo ---------------------------------//
   {path: "cargo", component:ListaCargoComponent},
   {path: "cadastroCargo", component:CadastroCargoComponent},
-  {path: "exclusaoCargo/:id", component: ExclusaoCargoComponent},
-  {path: "exclusaoFuncionario/:id_funcionario", component: ExclusaoFuncionarioComponent},
   {path: "edicaoCargo/:id", component: EdicaoCargoComponent},
+  {path: "exclusaoCargo/:id", component: ExclusaoCargoComponent},
+
+  //-------------------------- Funcionários --------------------------//
+  //Exibir
+  {path: "listaGeralFuncionarios", component:ListaGeralFuncionarioComponent},
   {path: "funcionarioCargo/:id_cargo",component: ListaFuncionarioComponent},
-  {path: "funcionarioCadastro/:id_cargo", component:CadastroFuncionarioComponent},
-  {path: "funcionarioExclusao/:id_funcionario", component:ExclusaoFuncionarioComponent},
-  {path: "listaGeralFuncionarios", component:ListaGeralFuncionarioComponent}
+  {path: "perfilFuncionario", component:PerfilFuncionarioComponent},
+  //Inserir
+  {path: "cadastroFuncionario/:id_cargo", component:CadastroFuncionarioComponent},
+  //Editar
+  {path: "edicaoFuncionario/:id_funcionario", component:EdicaoFuncionarioComponent},
+  {path: "edicaoFuncionario", component:EdicaoFuncionarioComponent},
+  //Excluir
+  //{path: "exclusaoFuncionario/:id_funcionario", component: ExclusaoFuncionarioComponent},
+  {path: "exclusaoFuncionario/:id_funcionario", component:ExclusaoFuncionarioComponent},
+  {path: "exclusaoFuncionario", component:ExclusaoFuncionarioComponent}
 ];
 
 @NgModule({
