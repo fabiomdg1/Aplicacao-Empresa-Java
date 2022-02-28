@@ -1,6 +1,6 @@
 import { CargoService } from 'src/app/servicos/cargo.service';
-import { Cargo } from './../../cargoModel';
-import { FuncionarioService } from './../../servicos/funcionario.service';
+import { Cargo } from '../../../cargoModel';
+import { FuncionarioService } from '../../../servicos/funcionario.service';
 import { Component, OnInit } from '@angular/core';
 import { Funcionario } from 'src/app/funcionarioModel';
 import { Router } from '@angular/router';

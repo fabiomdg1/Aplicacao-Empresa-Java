@@ -1,5 +1,5 @@
-import { CargoService } from './../../servicos/cargo.service';
-import { Cargo } from './../../cargoModel';
+import { CargoService } from '../../../servicos/cargo.service';
+import { Cargo } from '../../../cargoModel';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 

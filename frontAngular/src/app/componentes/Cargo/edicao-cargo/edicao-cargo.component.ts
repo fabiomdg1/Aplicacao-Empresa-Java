@@ -1,4 +1,4 @@
-import { Cargo } from './../../cargoModel';
+import { Cargo } from '../../../cargoModel';
 import { CargoService } from 'src/app/servicos/cargo.service';
 import { Component, OnInit } from '@angular/core';
 import { Funcionario } from 'src/app/funcionarioModel';

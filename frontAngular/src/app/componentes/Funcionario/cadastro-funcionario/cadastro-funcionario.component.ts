@@ -1,7 +1,7 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { FuncionarioService } from './../../servicos/funcionario.service';
+import { FuncionarioService } from '../../../servicos/funcionario.service';
 import { Component, OnInit } from '@angular/core';
-import { Funcionario } from './../../funcionarioModel';
+import { Funcionario } from '../../../funcionarioModel';
 import { CargoService } from 'src/app/servicos/cargo.service';
 
 
