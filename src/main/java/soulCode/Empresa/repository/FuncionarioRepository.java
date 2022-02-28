@@ -16,5 +16,7 @@ public interface FuncionarioRepository extends JpaRepository<Funcionario, Intege
 	List <Funcionario> fetchByCargo(Integer id_cargo);
 	
 	@Query(value = "select id_funcionario, func_nome, func_cidade, car_nome from cargo right join funcionario on funcionario.id_cargo = cargo.id_cargo order by func_nome", nativeQuery = true)
-	List<List> funcionariosComCargo();
+	List<List> funcComCargo();
+
+
 }

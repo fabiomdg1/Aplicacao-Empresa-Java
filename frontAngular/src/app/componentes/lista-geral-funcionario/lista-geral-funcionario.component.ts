@@ -12,19 +12,28 @@ import { Router } from '@angular/router';
 })
 export class ListaGeralFuncionarioComponent implements OnInit {
 
+  id_funcionario:string=''
   funcionarios:Funcionario[]=[]
+  func:any
+  fc: any[] = new Array
+
+
 
   constructor(private funcionarioService: FuncionarioService,
               private router:Router) { }
 
   ngOnInit(): void {
-    this.mostrarTodosFuncionarios()
+    this.mostrarFuncCargos()
   }
 
-  mostrarTodosFuncionarios(){
-    this.funcionarioService.buscarTodosFuncionarios().subscribe(resultado=>{
+  mostrarFuncCargos(){
+    this.funcionarioService.buscarFuncCargo().subscribe(resultado=>{
       this.funcionarios = resultado
+
+        for(this.func of this.funcionarios){
+          this.fc.push(this.func)
+          console.log(this.fc)
+        }
     })
   }
-
 }

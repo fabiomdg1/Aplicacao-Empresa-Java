@@ -68,6 +68,12 @@ public class FuncionarioController {
 		return funcionariosCargo;
 	}
 	
+	@GetMapping("/func-cargo")
+	public List<List>funcComCargos(){
+		List<List> func_Cargo = funcionarioService.bucarFuncCargo();		
+		return func_Cargo;
+	}
+	
 	
 	//---------------------------------------------------------------------------------------------------------------//
 	//----------------------------------------- GET - Apenas um Funcionário------------------------------------------//

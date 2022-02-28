@@ -32,6 +32,12 @@ export class FuncionarioService {
     return this.http.get<Funcionario[]>(url)
   }
 
+  buscarFuncCargo():Observable<Funcionario[]>{
+    const url = `${this.baseUrl}/func-cargo`
+    return this.http.get<Funcionario[]>(url)
+  }
+
+
   buscarUmFuncionario(id_funcionario:string):Observable<Funcionario>{
     const url = `${this.baseUrl}/funcionario/${id_funcionario}`
     return this.http.get<Funcionario>(url)

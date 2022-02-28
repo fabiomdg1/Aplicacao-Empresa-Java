@@ -36,9 +36,9 @@ public class FuncionarioService {
 	//----------------------------------------- Listar Todos os Funcionários com Cargo ------------------------------//
 	//---------------------------------------------------------------------------------------------------------------//
 	public List<List> funcionariosComCargo(){		
-		return funcionarioRepository.funcionariosComCargo();
+		//return funcionarioRepository.funcionariosComCargo();		
+		return funcionarioRepository.funcComCargo();
 	}
-	
 	
 	//---------------------------------------------------------------------------------------------------------------//
 	//----------------------------------------- Listar Apenas 1 Funcionários-----------------------------------------//
@@ -58,6 +58,11 @@ public class FuncionarioService {
 	public List<Funcionario> buscarFuncionarioCargo(Integer id_funcionario){
 		//List<Funcionario> funcionario = alunoRepository.fetchByTurma(id_turma);
 		List<Funcionario> funcionario = funcionarioRepository.fetchByCargo(id_funcionario);
+		return funcionario;
+	}
+	
+	public List<List> bucarFuncCargo(){
+		List<List> funcionario = funcionarioRepository.funcComCargo();
 		return funcionario;
 	}
 	
