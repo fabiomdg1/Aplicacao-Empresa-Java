@@ -27,16 +27,16 @@ const routes: Routes = [
   //Exibir
   {path: "listaGeralFuncionarios", component:ListaGeralFuncionarioComponent},
   {path: "funcionarioCargo/:id_cargo",component: ListaFuncionarioComponent},
-  {path: "perfilFuncionario", component:PerfilFuncionarioComponent},
+  {path: "perfilFuncionario/:id_funcionario", component:PerfilFuncionarioComponent},
   //Inserir
   {path: "cadastroFuncionario/:id_cargo", component:CadastroFuncionarioComponent},
   //Editar
   {path: "edicaoFuncionario/:id_funcionario", component:EdicaoFuncionarioComponent},
-  {path: "edicaoFuncionario", component:EdicaoFuncionarioComponent},
+  //{path: "edicaoFuncionario", component:EdicaoFuncionarioComponent},
   //Excluir
   //{path: "exclusaoFuncionario/:id_funcionario", component: ExclusaoFuncionarioComponent},
   {path: "exclusaoFuncionario/:id_funcionario", component:ExclusaoFuncionarioComponent},
-  {path: "exclusaoFuncionario", component:ExclusaoFuncionarioComponent}
+  //{path: "exclusaoFuncionario", component:ExclusaoFuncionarioComponent}
 ];
 
 @NgModule({

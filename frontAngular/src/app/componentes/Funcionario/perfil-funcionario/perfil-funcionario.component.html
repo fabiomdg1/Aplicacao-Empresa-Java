@@ -1,48 +1,61 @@
 <div class="card container">
   <div class="card-body">
-    <h5 class="card-title">Editar de novo Funcionário</h5>
+    <h5 class="card-title">Dados do Funcionário</h5>
     <form>
-      <!-- Nome -->
-      <div class="mb-3">
-        <label class="form-label">Nome do funcionário</label>
-        <input type="text" class="form-control" name="func_nome">
-      </div>
+      <div class="row">
 
-      <!-- Cidade -->
-      <div class="mb-3">
-        <label class="form-label">Cidade</label>
-        <input type="text" class="form-control" name="func_cidade">
-      </div>
+        <div class="col-6">
+          <!-- Nome -->
+          <div class="mb-3">
+            <label class="form-label">Nome do funcionário</label>
+            <input type="text" [(ngModel)]="funcionarios.func_nome" class="form-control" name="func_nome">
+          </div>
 
-      <!-- Cidade -->
-      <div class="mb-3">
-        <label class="form-label">Bairro</label>
-        <input type="text" class="form-control" name="func_bairro">
-      </div>
+          <!-- Cidade -->
+          <div class="mb-3">
+            <label class="form-label">Cidade</label>
+            <input type="text" [(ngModel)]="funcionarios.func_cidade" class="form-control" name="func_cidade">
+          </div>
 
-      <!-- Cargo -->
-      <div class="mb-3">
-        <label class="form-label">Cargo</label>
-        <input type="text" readonly class="form-control" name="func_cargo">
-      </div>
+          <!-- Bairro -->
+          <div class="mb-3">
+            <label class="form-label">Bairro</label>
+            <input type="text" [(ngModel)]="funcionarios.func_bairro" class="form-control" name="func_bairro">
+          </div>
 
-      <!-- Telefone -->
+          <!-- Cargo -->
+          <div class="mb-3">
+            <label class="form-label">Cargo</label>
+            <input type="text" [(ngModel)]="funcionarios.func_cargo" readonly class="form-control" name="func_cargo">
+          </div>
+        </div>
+
+        <div class="col-6">
+          <!-- Telefone -->
       <div class="mb-3">
         <label class="form-label">Telefone</label>
-        <input type="text" class="form-control" name="func_telefone">
+        <input type="text" [(ngModel)]="funcionarios.func_telefone" class="form-control" name="func_telefone">
       </div>
 
       <!-- Salário -->
       <div class="mb-3">
         <label class="form-label">Salário</label>
-        <input type="text" class="form-control" name="func_salario">
+        <input type="text" [(ngModel)]="funcionarios.func_salario" class="form-control" name="func_salario">
       </div>
 
       <!-- Observação -->
       <div class="mb-3 bug_rodape">
         <label class="form-label">Observação</label>
-        <textarea class="form-control" name="func_observacao"></textarea>
+        <textarea [(ngModel)]="funcionarios.func_observacao" class="form-control" name="func_observacao"></textarea>
       </div>
+        </div>
+      </div>
+
+
+
+
+
+
 
       <button class="btn btn-sm btn-secondary ">Salvar</button>
       <button type="reset" class="btn btn-sm btn-danger mx-3">Limpar</button>
