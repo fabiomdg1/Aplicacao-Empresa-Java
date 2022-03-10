@@ -3,7 +3,7 @@ import { Cargo } from '../../../cargoModel';
 import { FuncionarioService } from '../../../servicos/funcionario.service';
 import { Component, OnInit } from '@angular/core';
 import { Funcionario } from 'src/app/funcionarioModel';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -18,16 +18,20 @@ export class ListaGeralFuncionarioComponent implements OnInit {
   func:any
   fc: any[] = new Array
   todosFunc:any
+  id_cargo:any
 
   constructor(private funcionarioService: FuncionarioService,
-              private router:Router) { }
+              private router:Router,
+              private route:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.mostrarFuncCargos()
+    this.id_cargo = this.route.snapshot.paramMap.get('id_cargo')
+
   }
 
   mostrarFuncCargos(){
-    this.funcionarioService.buscarFuncCargo().subscribe(resultado=>{
+    this.funcionarioService.buscarFuncCargo(this.id_cargo).subscribe(resultado=>{
       this.funcionarios = resultado
 
         for(this.func of this.funcionarios){

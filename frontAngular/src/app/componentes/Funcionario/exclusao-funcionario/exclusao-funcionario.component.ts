@@ -15,6 +15,7 @@ export class ExclusaoFuncionarioComponent implements OnInit {
   funcionario:Funcionario = {
     id_funcionario:'',
     func_cargo:'',
+    id_cargo:'',
     func_cidade:'',
     func_bairro:'',
     func_nome:'',
@@ -30,7 +31,7 @@ export class ExclusaoFuncionarioComponent implements OnInit {
               private router:Router) { }
 
   ngOnInit(): void {
-    this.id_cargo = this.route.snapshot.paramMap.get("id_turma")!
+    this.id_cargo = this.route.snapshot.paramMap.get("id_cargo")!
     this.funcionario.id_funcionario = this.route.snapshot.paramMap.get("id_funcionario")
     this.buscarUmFuncionario()
   }
@@ -38,6 +39,7 @@ export class ExclusaoFuncionarioComponent implements OnInit {
   buscarUmFuncionario(){
     this.funcionarioService.buscarUmFuncionario(this.funcionario.id_funcionario).subscribe((resultado)=>{
       this.funcionario = resultado
+      console.log("Id do cargo: " + this.funcionario)
     })
   }
 

@@ -1,5 +1,4 @@
 package soulCode.Empresa.service;
-import java.sql.Array;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,9 +35,9 @@ public class FuncionarioService {
 	//---------------------------------------------------------------------------------------------------------------//
 	//----------------------------------------- Listar Todos os Funcionários com Cargo ------------------------------//
 	//---------------------------------------------------------------------------------------------------------------//
-	public List<List> funcionariosComCargo(){		
+	public List<List> funcionariosComCargo(Integer id_cargo){		
 		//return funcionarioRepository.funcionariosComCargo();		
-		return funcionarioRepository.funcComCargo();	
+		return funcionarioRepository.funComCargo(id_cargo);	
 	}
 	
 	//---------------------------------------------------------------------------------------------------------------//
@@ -62,8 +61,8 @@ public class FuncionarioService {
 		return funcionario;
 	}
 	
-	public List<List> bucarFuncCargo(){
-		List<List> funcionario = funcionarioRepository.funcComCargo();
+	public List<List> bucarFuncCargo(Integer id_cargo){
+		List<List> funcionario = funcionarioRepository.funComCargo(id_cargo);
 		return funcionario;
 	}
 	

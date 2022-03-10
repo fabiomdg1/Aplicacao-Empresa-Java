@@ -14,7 +14,10 @@ public interface FuncionarioRepository extends JpaRepository<Funcionario, Intege
 	@Query(value = "select * from funcionario where id_cargo = :id_cargo", nativeQuery = true)
 	List <Funcionario> fetchByCargo(Integer id_cargo);
 	
-	@Query(value = "select id_funcionario, func_nome, func_cidade, car_nome from cargo right join funcionario on funcionario.id_cargo = cargo.id_cargo order by func_nome", nativeQuery = true)	
-	List<List> funcComCargo();	
+//	@Query(value = "select id_funcionario, func_nome, func_cidade, car_nome, cargo.id_cargo from cargo right join funcionario on funcionario.id_cargo = cargo.id_cargo order by func_nome", nativeQuery = true)	
+//	List<List> funcComCargo(Integer id_cargo);	
+	
+	@Query(value = "select id_funcionario, func_nome, func_cidade, id_cargo from funcionario where id_cargo = :id_cargo", nativeQuery = true)
+	List<List> funComCargo(Integer id_cargo);
 
 }

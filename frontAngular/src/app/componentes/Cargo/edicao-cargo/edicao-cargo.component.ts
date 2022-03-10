@@ -34,6 +34,7 @@ export class EdicaoCargoComponent implements OnInit {
 
   editarCargo(){
     this.cargoService.editarCargo(this.cargo).subscribe({
+      next:() => console.log("Cargo editado com sucesso"),
       complete: () => alert("Cargo editado com sucesso"),
       error: () => alert("Erro: Cargo não pode ser editado")
     })

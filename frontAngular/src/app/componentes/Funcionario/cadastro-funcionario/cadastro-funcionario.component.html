@@ -40,7 +40,7 @@
 
       <!-- Salário -->
       <div class="mb-3">
-        <label class="form-label">Salároi</label>
+        <label class="form-label">Salário</label>
         <input type="text" [(ngModel)]="funcionario.func_salario" class="form-control" name="func_salario">
       </div>
 
@@ -53,7 +53,7 @@
 
       <button (click)="cadastrarFuncionario()" class="btn btn-sm btn-secondary ">Cadastrar</button>
       <button type="reset" class="btn btn-sm btn-danger mx-3">Limpar</button>
-      <button class="btn btn-sm btn-warning mx-3">Voltar</button>
+      <button routerLink="/listaGeralFuncionarios" class="btn btn-sm btn-warning mx-3">Voltar</button>
     </form>
     </div>
 

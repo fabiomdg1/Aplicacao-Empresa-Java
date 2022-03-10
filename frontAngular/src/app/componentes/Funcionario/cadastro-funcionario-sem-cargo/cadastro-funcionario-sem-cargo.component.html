@@ -1,8 +1,8 @@
 <div class="card container">
   <div class="card-body">
-    <h5 class="card-title">Editar de novo Funcionário</h5>
+    <h5 class="card-title">Cadastro de novo Funcionário</h5>
     <form>
-      <!-- Nome -->
+      <!-- Nome do funcionário -->
       <div class="mb-3">
         <label class="form-label">Nome do funcionário</label>
         <input type="text" [(ngModel)]="funcionario.func_nome" class="form-control" name="func_nome">
@@ -23,13 +23,26 @@
       <!-- Cargo -->
       <div class="mb-3">
         <label class="form-label">Cargo</label>
-        <input type="text" [(ngModel)]="funcionario.func_cargo" class="form-control" name="func_cargo">
+        <div>
+          <select class="form-control" [(ngModel)]="funcionario.func_cargo" name="funcionario.func_cargo">
+            <option *ngFor="let cargo of cargos" [ngValue]="cargo.id_cargo">
+              {{cargo.car_nome}}
+            </option>
+          </select>
+        </div>
+        <!-- <input type="text" [(ngModel)]="funcionario.func_cargo" class="form-control" name="func_cargo"> -->
       </div>
 
       <!-- Telefone -->
       <div class="mb-3">
         <label class="form-label">Telefone</label>
         <input type="text" [(ngModel)]="funcionario.func_telefone" class="form-control" name="func_telefone">
+      </div>
+
+      <!-- Email -->
+      <div class="mb-3">
+        <label class="form-label">E-mail</label>
+        <input type="text" [(ngModel)]="funcionario.func_email" class="form-control" name="func_email">
       </div>
 
       <!-- Salário -->
@@ -44,10 +57,10 @@
         <textarea class="form-control" [(ngModel)]="funcionario.func_observacao" name="func_observacao"></textarea>
       </div>
 
-      <button (click)="editarFuncionario()" class="btn btn-sm btn-secondary ">Salvar</button>
+      <button (click)="cadastrarFuncionario()" class="btn btn-sm btn-secondary ">Cadastrar</button>
       <button type="reset" class="btn btn-sm btn-danger mx-3">Limpar</button>
-      <button routerLink="/funcionarioCargo/{{id_cargo}}" class="btn btn-sm btn-warning mx-3">Voltar</button>
+      <button routerLink="listaGeralFuncionarios" class="btn btn-sm btn-warning mx-3">Voltar</button>
     </form>
+    </div>
 
-  </div>
 </div>

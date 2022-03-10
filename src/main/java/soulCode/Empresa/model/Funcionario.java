@@ -66,6 +66,8 @@ public class Funcionario {
 		@ManyToOne
 		@JoinColumn(name = "id_cargo")
 		private Cargo cargo;
+		
+		
 	
 	//----- Getters and Setters -----//
 		

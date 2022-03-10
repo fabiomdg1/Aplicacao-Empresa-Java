@@ -1,3 +1,4 @@
+import { CadastroFuncionarioSemCargoComponent } from './componentes/Funcionario/cadastro-funcionario-sem-cargo/cadastro-funcionario-sem-cargo.component';
 //------------ Reponsável por permitir o uso do ngModel -------//
 import { FormsModule } from '@angular/forms';
 
@@ -12,9 +13,9 @@ import { AppComponent } from './app.component';
 import { ListaCargoComponent } from './componentes/Cargo/lista-cargo/lista-cargo.component';
 import { EdicaoCargoComponent } from './componentes/Cargo/edicao-cargo/edicao-cargo.component';
 import { ExclusaoCargoComponent } from './componentes/Cargo/exclusao-cargo/exclusao-cargo.component';
-import { FooterComponent } from './componentes/footer/footer.component';
-import { HomeComponent } from './componentes/home/home.component';
-import { HeaderComponent } from './componentes/header/header.component';
+import { FooterComponent } from './componentes/Templates/footer/footer.component';
+import { HomeComponent } from './componentes/Templates/home/home.component';
+import { HeaderComponent } from './componentes/Templates/header/header.component';
 import { CadastroCargoComponent } from './componentes/Cargo/cadastro-cargo/cadastro-cargo.component';
 import { CadastroFuncionarioComponent } from './componentes/Funcionario/cadastro-funcionario/cadastro-funcionario.component';
 import { ListaFuncionarioComponent } from './componentes/Funcionario/lista-funcionario/lista-funcionario.component';
@@ -35,6 +36,7 @@ import { PerfilFuncionarioComponent } from './componentes/Funcionario/perfil-fun
     HeaderComponent,
     CadastroCargoComponent,
     CadastroFuncionarioComponent,
+    CadastroFuncionarioSemCargoComponent,
     ListaFuncionarioComponent,
     ExclusaoFuncionarioComponent,
     EdicaoFuncionarioComponent,

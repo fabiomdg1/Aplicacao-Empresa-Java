@@ -5,48 +5,48 @@
      <!-- Nome -->
      <div class="mb-3">
       <label class="form-label">Nome do funcionário</label>
-      <input type="text" class="form-control" name="func_nome">
+      <input type="text" [(ngModel)]="funcionario.func_nome" readonly class="form-control" name="func_nome">
     </div>
 
     <!-- Cidade -->
     <div class="mb-3">
       <label class="form-label">Cidade</label>
-      <input type="text" class="form-control" name="func_cidade">
+      <input type="text" [(ngModel)]="funcionario.func_cidade" readonly class="form-control" name="func_cidade">
     </div>
 
     <!-- Cidade -->
     <div class="mb-3">
       <label class="form-label">Bairro</label>
-      <input type="text" class="form-control" name="func_bairro">
+      <input type="text" [(ngModel)]="funcionario.func_bairro" readonly class="form-control" name="func_bairro">
     </div>
 
     <!-- Cargo -->
     <div class="mb-3">
       <label class="form-label">Cargo</label>
-      <input type="text" readonly class="form-control" name="func_cargo">
+      <input type="text" [(ngModel)]="funcionario.func_cargo" readonly class="form-control" name="func_cargo">
     </div>
 
     <!-- Telefone -->
     <div class="mb-3">
       <label class="form-label">Telefone</label>
-      <input type="text" class="form-control" name="func_telefone">
+      <input type="text" [(ngModel)]="funcionario.func_telefone" readonly class="form-control" name="func_telefone">
     </div>
 
     <!-- Salário -->
     <div class="mb-3">
       <label class="form-label">Salário</label>
-      <input type="text" class="form-control" name="func_salario">
+      <input type="text" [(ngModel)]="funcionario.func_salario" readonly class="form-control" name="func_salario">
     </div>
 
     <!-- Observação -->
     <div class="mb-3 bug_rodape">
       <label class="form-label">Observação</label>
-      <textarea class="form-control" name="func_observacao"></textarea>
+      <textarea [(ngModel)]="funcionario.func_observacao" readonly class="form-control" name="func_observacao"></textarea>
     </div>
 
-      <button (click)="deleteFuncionario()" class="btn btn-primary ">Excluir</button>
-      <button type="reset" class="btn btn-secondary mx-3">Cancelar</button>
-      <button class="btn btn-secondary mx-3">Voltar</button>
+      <button (click)="deleteFuncionario()" class="btn btn-sm btn-primary ">Excluir</button>
+      <button type="reset" class="btn btn-sm btn-danger mx-3">Limpar</button>
+      <button routerLink="/funcionarioCargo/{{id_cargo}}" class="btn btn-sm btn-warning mx-3">Voltar</button>
     </form>
 
   </div>

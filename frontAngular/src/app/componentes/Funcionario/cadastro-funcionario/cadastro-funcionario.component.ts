@@ -19,6 +19,7 @@ export class CadastroFuncionarioComponent implements OnInit {
   funcionario:Funcionario = {
     id_funcionario:'',
     func_cargo:'',
+    id_cargo:'',
     func_cidade:'',
     func_bairro:'',
     func_nome:'',
@@ -42,10 +43,10 @@ export class CadastroFuncionarioComponent implements OnInit {
   cadastrarFuncionario(){
     this.funcionarioService.cadastrarFuncionario(this.funcionario,this.id_cargo).subscribe({
 
-      next:() => {console.log("Funcionário cadastrado")},
+      next:() => {console.log("Funcionário cadastrado no cargo" + this.id_cargo)},
 
       error: () => {alert("Erro no cadastro do funcionário")
-                    this.router.navigate([`/funcionarioCargo/${this.id_cargo}`])},
+                    this.router.navigate([`/cadastroFuncionario/${this.id_cargo}`])},
 
       complete: () => {alert("Funcionário cadastrado no cargo")
                       this.router.navigate([`/funcionarioCargo/${this.id_cargo}`])},

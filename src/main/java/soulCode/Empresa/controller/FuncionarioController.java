@@ -66,15 +66,15 @@ public class FuncionarioController {
 	}
 	
 	//--------------------------------------------------- GET - Todos os Funcionários com Cargo ---------------------//
-	@GetMapping("/funcionario-cargo")
-	public List<List>funcionariosComCargo(){
-		List<List> funcionariosCargo = funcionarioService.funcionariosComCargo();
+	@GetMapping("/funcionario-cargo/{id_cargo}")
+	public List<List>funcionariosComCargo(Integer id_cargo){
+		List<List> funcionariosCargo = funcionarioService.funcionariosComCargo(id_cargo);
 		return funcionariosCargo;
 	}
 	
-	@GetMapping("/func-cargo")
-	public List<List>funcComCargos(){
-		List<List> func_Cargo = funcionarioService.bucarFuncCargo();		
+	@GetMapping("/func-cargo/{id_cargo}")
+	public List<List>funcComCargos(Integer id_cargo){
+		List<List> func_Cargo = funcionarioService.bucarFuncCargo(id_cargo);		
 		return func_Cargo;
 	}
 	
@@ -113,6 +113,16 @@ public class FuncionarioController {
 		return ResponseEntity.created(uri).build();
 	}
 	
+//	@PostMapping("/funcionarioSemCargo") 
+//	public ResponseEntity<Funcionario> InserirFuncionario(@RequestBody Funcionario funcionario, String cargo){
+//		
+//		funcionario = funcionarioService.inserirFuncionarioSemCargo(funcionario, cargo);
+//		
+//			URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/cargo/{id}")
+//				.buildAndExpand(funcionario.getId_funcionario()).toUri();
+//		return ResponseEntity.created(uri).build();
+//	}
+//	
 	
 	//---------------------------------------------------------------------------------------------------------------//
 	//----------------------------------------- DELETE - Funcionário---------------------------------------------------//
@@ -133,4 +143,7 @@ public class FuncionarioController {
 		funcionario = funcionarioService.editarFuncionario(funcionario);
 		return ResponseEntity.noContent().build();
 	}
+	
+	
+	
 }

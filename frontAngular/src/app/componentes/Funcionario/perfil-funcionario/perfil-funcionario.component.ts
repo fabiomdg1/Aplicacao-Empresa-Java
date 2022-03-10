@@ -18,6 +18,7 @@ export class PerfilFuncionarioComponent implements OnInit {
     func_cidade:'',
     func_email:'',
     func_cargo:'',
+    id_cargo:'',
     func_nome:'',
     func_observacao:'',
     func_salario:'',

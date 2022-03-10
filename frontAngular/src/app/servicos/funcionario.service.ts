@@ -32,8 +32,8 @@ export class FuncionarioService {
     return this.http.get<Funcionario[]>(url)
   }
 
-  buscarFuncCargo():Observable<Funcionario[]>{
-    const url = `${this.baseUrl}/func-cargo`
+  buscarFuncCargo(id_cargo:String):Observable<Funcionario[]>{
+    const url = `${this.baseUrl}/func-cargo/${id_cargo}`
     return this.http.get<Funcionario[]>(url)
   }
 
@@ -50,10 +50,17 @@ export class FuncionarioService {
     return this.http.post<Funcionario>(url,funcionario)
   }
 
+   //-------------------------------------------- POST --------------------------------------------//
+   cadastrarFuncionarioSemCargo(funcionario:Funcionario, cargo:any):Observable<Funcionario>{
+    const url = `${this.baseUrl}/funcionarioSemCargo`
+    return this.http.post<Funcionario>(url,funcionario)
+  }
+
 
   //-------------------------------------------- PUT ---------------------------------------------//
-  editarFuncionario(){
-
+  editarFuncionario(funcionario:Funcionario):Observable<void>{
+    const url = `${this.baseUrl}/funcionarios/${funcionario.id_funcionario}`
+    return this.http.put<void>(url,funcionario)
   }
 
 

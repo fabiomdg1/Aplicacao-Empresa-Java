@@ -3,7 +3,6 @@ import { FuncionarioService } from '../../../servicos/funcionario.service';
 import { Funcionario } from 'src/app/funcionarioModel';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Cargo } from 'src/app/cargoModel';
 
 @Component({
   selector: 'app-lista-funcionario',
@@ -31,26 +30,35 @@ export class ListaFuncionarioComponent implements OnInit {
   }
 
   mostrarFuncCargos(){
-    this.funcionarioService.buscarFuncCargo().subscribe(resultado=>{
+    this.funcionarioService.buscarFuncCargo(this.id_cargo).subscribe(resultado=>{
       this.funcionarios = resultado
-      console.log("Teste: " + this.funcionarios)
+      //console.log("Teste funcionarios: " + this.funcionarios)
 
-        for(this.func of this.funcionarios){
-          this.fc.push(this.func)
-          console.log(this.fc)
-        }
+        // for(this.func of this.funcionarios){
+        //   this.fc.push(this.func)
+        //   console.log(this.fc)
+        // }
     })
   }
 
   buscarFuncionarioCargo(){
     this.funcionarioService.buscarFuncionarioCargo(this.id_cargo).subscribe((resultado)=>{
-      this.funcionarios = resultado
+      setTimeout(() => {
+        this.funcionarios = resultado
+      }, 500)
     })
   }
 
   buscarCargo(){
     this.cargoService.mostrarUmCargo(this.id_cargo).subscribe((resultado)=>{
-      this.nome_cargo = resultado.car_nome;
+
+      //----- O Refresh da página ocorre mais rápido que o cadastro do registro no bd -----//
+      //----- O setTimeout faz o refresh aguardar para poder mostrar o novo registro ------//
+      setTimeout(() => {
+        this.nome_cargo = resultado.car_nome;
+      }, 500)
+
+
     })
   }
 
